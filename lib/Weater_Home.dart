@@ -13,7 +13,6 @@ class _Weather_Home_PageState extends State<Weather_Home_Page> {
   TextEditingController city = TextEditingController();
   WeatherModel? w;
   var weather;
-  FocusNode _textFieldFocus = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -385,13 +384,13 @@ class _Weather_Home_PageState extends State<Weather_Home_Page> {
   String _convertUnixTimestampToDateTime(int unixTimestamp) {
     final dateTime = DateTime.fromMillisecondsSinceEpoch(unixTimestamp * 1000);
     final formattedDateTime =
-        DateFormat('yyyy-MM-dd HH:mm:ss').format(dateTime);
+        DateFormat('dd-MM-yyyy HH:mm:ss').format(dateTime);
     return formattedDateTime;
   }
 
   String Date(int unixTimestamp) {
     final dateTime = DateTime.fromMillisecondsSinceEpoch(unixTimestamp * 1000);
-    final formattedDateTime = DateFormat('yyyy-MM-dd').format(dateTime);
+    final formattedDateTime = DateFormat('dd-MM-yyyy').format(dateTime);
     return formattedDateTime;
   }
 }
